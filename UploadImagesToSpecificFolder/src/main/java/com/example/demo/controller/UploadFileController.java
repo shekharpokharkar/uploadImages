@@ -18,6 +18,7 @@ public class UploadFileController {
 
 	@PostMapping("/upload")
 	public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
+		System.out.println("************************************");
 		String uploadFile = service.uploadFile(file);
 		return new ResponseEntity<>(uploadFile, HttpStatus.CREATED);
 	}
